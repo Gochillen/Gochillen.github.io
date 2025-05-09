@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>一篇入门Objective-C | Coolnaut space</title><meta name="author" content="Coolnaut"><meta name="copyright" content="Coolnaut"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="开始写一写快速入门系列了。所谓‘欲速则不达’，快速入门终究不是正道，大家还是要扎扎实实，脚踏实地的去学习。  1. 前言已经在公司开发iOS程序一段时间了，因为历史原因，工程项目使用的Objective-C，因此这里这第一篇便是整理了一下怎么快速去入门Objective-C这门语言。一门编程语言，终究有它独到之处，不管是设计、底层、功能等任何层面，个人而言不会对任何一门语言有轻视之意。假设大家已">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一篇入门Objective-C">
+<meta property="og:url" content="http://www.baidu.com/2021/01/19/%E4%B8%80%E7%AF%87%E5%85%A5%E9%97%A8Objective-C/index.html">
+<meta property="og:site_name" content="Coolnaut space">
+<meta property="og:description" content="开始写一写快速入门系列了。所谓‘欲速则不达’，快速入门终究不是正道，大家还是要扎扎实实，脚踏实地的去学习。  1. 前言已经在公司开发iOS程序一段时间了，因为历史原因，工程项目使用的Objective-C，因此这里这第一篇便是整理了一下怎么快速去入门Objective-C这门语言。一门编程语言，终究有它独到之处，不管是设计、底层、功能等任何层面，个人而言不会对任何一门语言有轻视之意。假设大家已">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/07/29/1Skcxe5wrfs6WZi.jpg">
+<meta property="article:published_time" content="2021-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-19T16:00:00.000Z">
+<meta property="article:author" content="Coolnaut">
+<meta property="article:tag" content="OC">
+<meta property="article:tag" content="iOS，速通之道">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/07/29/1Skcxe5wrfs6WZi.jpg"><link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/43647498?s=40&v=4"><link rel="canonical" href="http://www.baidu.com/2021/01/19/%E4%B8%80%E7%AF%87%E5%85%A5%E9%97%A8Objective-C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Coolnaut","link":"链接: ","source":"来源: Coolnaut space","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一篇入门Objective-C',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-20 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3849542_d3roptmaros.css"><meta name="baidu-site-verification" content="codeva-0CzYfwIAPS" /><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.niupic.com/images/2023/01/06/aeXJ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-labels"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-bxs-category"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-about"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2024/07/29/1Skcxe5wrfs6WZi.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Coolnaut space</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-labels"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-bxs-category"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-about"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">一篇入门Objective-C</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-19T16:00:00.000Z" title="发表于 2021-01-20 00:00:00">2021-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-19T16:00:00.000Z" title="更新于 2021-01-20 00:00:00">2021-01-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="一篇入门Objective-C"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>开始写一写快速入门系列了。所谓‘欲速则不达’，快速入门终究不是正道，大家还是要扎扎实实，脚踏实地的去学习。</p>
+</blockquote>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>已经在公司开发iOS程序一段时间了，因为历史原因，工程项目使用的Objective-C，因此这里这第一篇便是整理了一下怎么快速去入门Objective-C这门语言。<br>一门编程语言，终究有它独到之处，不管是设计、底层、功能等任何层面，个人而言不会对任何一门语言有轻视之意。<br>假设大家已经有了其他语言的基础，尤其是 C&#x2F;C++ 的基础，这样理解起来比火箭还快。正文开始。<br>这里是苹果官方文档：<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210-CH1-SW1">About Objective-C
+</a></p>
+<h2 id="2-Hello-world"><a href="#2-Hello-world" class="headerlink" title="2. Hello-world"></a>2. Hello-world</h2><p>下面还是以一个程序开始。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> main(<span class="type">int</span> argc, <span class="keyword">const</span> <span class="type">char</span> * argv[]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;Hello, World!&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>OC（Objective-C的简称，其他还有objc等）的IDE为Xcode，在第一次创建程序的时候，就会出现上述代码。</p>
+<h5 id="import"><a href="#import" class="headerlink" title="#import"></a>#import</h5><p>如果学习过Java，那么对这个关键字就会很熟悉，但是在这里还是和C语言一样，只是对头文件进行包含，但是其增加了判断头文件是否重复包含的功能。可以理解为将#include进行了一层封装。</p>
+<h5 id="Foundation"><a href="#Foundation" class="headerlink" title="Foundation"></a>Foundation</h5><p>Foundation，基础框架，为了便于理解，可以对比C++的STL，它是很多头文件的一个集合，除了框架，大佬们还将框架整理成一个框架集，于是Cocoa框架集出现了，Foundation框架是Cocoa的组成部分之一。<br>名词解释：<br>Cocoa框架是MacOS X桌面应用程序的开发，Cocoa包括Foundation、Core Data和AppKit框架。而Cocoa Touch框架用于iOS设备上（iPhone&#x2F;iPad）应用程序的开发。Cocoa和Cocoa Touch都有Foundation和Core Data框架，然而在Cocoa Touch下，UIKit代替了AppKit框架。</p>
+<h5 id="NSLog"><a href="#NSLog" class="headerlink" title="NSLog"></a>NSLog</h5><p>main函数就不介绍了，和C语言是一样的。这个NSLog 就是C语言的printf，用于格式输出的。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%@，输出对象</span><br><span class="line">%f 浮点/双字  </span><br><span class="line">%zu size_t  </span><br><span class="line">%e 浮点/双字 （科学计算）  </span><br><span class="line">%g 浮点/双字  </span><br><span class="line">%c 字符  </span><br><span class="line">%C <span class="type">unichar</span>  </span><br><span class="line">%lld <span class="number">64</span>位长整数（<span class="type">long</span> <span class="type">long</span>）  </span><br><span class="line">%llu 无符<span class="number">64</span>位长整数  </span><br><span class="line">%Lf <span class="number">64</span>位双字</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>为什么以NS为前缀？如果对OC的历史感兴趣的可以去百科找找，这里不细说，仅提供大概的描述。这是因为Cocoa的前身名叫NextStep。为了避免名称冲突，于是只要是属于或者说是Cocoa框架集提供的都是以NS为前缀。为什么都改名了还以NS为开头，可以理解为你我的阑尾，属于历史遗留问题。<br>NSLog 和其他打印函数一样，都是字符串为参数。OC中 @ 是一个关键符号，和对象相关联。你看看人家名字：Objective-C，面向对象的C。对于字符串来说，不能直接是双引号，而是需要加个@ 来表示这是一个字符串对象。OC 中字符串类为 NSString。</p>
+<h2 id="3-类"><a href="#3-类" class="headerlink" title="3. 类"></a>3. 类</h2><p>有了C++基础，对于理解OC的类不是难事，后面的一些列特性都以C++中的一些语法为例子。对于OC来说，类的声明和实现是分开的。一般在头文件 .h 进行声明，.m文件中进行实现（C语言的源代码文件以.c为后缀，C++以.cpp）。语法如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*.h文件*/</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> 类名 : 父类</span></span><br><span class="line">&#123;</span><br><span class="line">	成员变量/属性</span><br><span class="line">&#125;</span><br><span class="line">-(返回值) 方法名:(参数类型) 参数名;</span><br><span class="line">+(返回值) 方法名:(参数类型) 参数名;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*.m文件*/</span></span><br><span class="line"><span class="comment">//实验一个.h文件是否可以有多个类</span></span><br><span class="line">@<span class="class"><span class="keyword">@implementation</span> <span class="title">Circle</span></span></span><br><span class="line">-(返回值) 方法名:(参数类型) 参数名</span><br><span class="line">&#123;&#125;</span><br><span class="line">+(返回值) 方法名:(参数类型) 参数名</span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>以interface来定义类，与implementation来实现类。与C++语法不同之处或者自己的特点就是：</p>
+<ol>
+<li>每一个类都有一个父类，或者说是超类，第一个自定义的类都是NSObject，后续就会了解到NSObject其实是我们的根类。因此每时每刻都有继承。继承的语法和C++中不同的就是没有多继承，而且没有继承的那三个权限问题。<blockquote>
+<p>如果没有父类就会出现错误：Class ‘Test’ defined without specifying a base class</p>
+</blockquote>
+</li>
+<li>类声明时，其成员变量在花括号内。且关键字都是以@开始，结尾都是以end结尾，因此不存在用花括号来进行分割代码。</li>
+<li>方法的定义格式与众不同，其冒号用来分割参数，注意其方法的特点还有如下的特征：</li>
+</ol>
+<blockquote>
+<ol>
+<li>冒号也是方法名的一部分</li>
+<li>多个参数的时候也是多个冒号，而且有如下花里胡哨的美好<br>-(void)setName:(NSString*) name AndAge : (int) age;<br>这个函数名就是 <strong>setName:AndAge :</strong> 这样的好处就是在传参的时候知道每个参数是干嘛的。</li>
+</ol>
+</blockquote>
+<ol start="4">
+<li>实现类的时候不要带后面的继承那一部分。<br>简单实现类的一般方法见上述，相对来说比较简单，但是对于C++来说，OC的面向对象会更纯粹一些，见后续。</li>
+</ol>
+<h2 id="4-对象"><a href="#4-对象" class="headerlink" title="4. 对象"></a>4. 对象</h2><p>OC在实例化对象的时候虽然也可以用new，其底层还是调用的alloc，init两个函数，因此，后续写代码直接调用这两个函数就好，不用new。</p>
+<blockquote>
+<p>OC是完全兼容C的，因此写任何C代码都是没问题的，说这个的原因就是没法用OC写一个单独的函数，OC写成员函数是没有问题的。另外OC的代码在编译的时候还是转换成了C语言的代码，因此所谓兼容其实就是穿了衣服的C语言。</p>
+</blockquote>
+<h3 id="4-1-消息"><a href="#4-1-消息" class="headerlink" title="4.1 消息"></a>4.1 消息</h3><p>先说一下OC的方法调用吧。OC的方法调用就不要用调用来说了，应该说是传递，因为在OC中，方法的调用过程称为消息传递过程。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[对象 消息] ----&gt;  [obj message]（.m的后缀就是message）</span><br><span class="line">[对象 方法]</span><br></pre></td></tr></table></figure>
+<p>这就是OC的方法调用&#x2F;消息传递</p>
+<h3 id="4-2-对象"><a href="#4-2-对象" class="headerlink" title="4.2 对象"></a>4.2 对象</h3><p>OC中的对象都是以指针的形式，例如：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span>* str = [[<span class="built_in">NSString</span> alloc] init];</span><br></pre></td></tr></table></figure>
+<p>上述的就是一个Cocoa提供的字符串类。至于为什么是指针对象，这就要说到OC对于对象模型的组织了（后话）。<br>因此我们后面创建对象都是以指针的形式创建</p>
+<h3 id="4-3-构造函数"><a href="#4-3-构造函数" class="headerlink" title="4.3 构造函数"></a>4.3 构造函数</h3><p>上述的init就是构造函数，无参的够赞函数，类比C++中编译器默认生成的默认函数。如果要传参数怎么办？如下声明够赞函数：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(类名*)initWith:(类型)参数名 Withxxx:(类型)参数名;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>类名*可以换成id，id是一个指向对象的指针，这是个万能指针，这是OC的新添加的一个数据类型</li>
+<li>构造函数有返回值了，不像C++没有返回值，这个返回值是this指针，但是在OC中请写成self。</li>
+<li>Withxxx是一个描述，描述你这个参数的。带参数的构造函数就像一个普通的方法，只是返回值和作用比较特殊而已。</li>
+</ol>
+<h4 id="5-后记"><a href="#5-后记" class="headerlink" title="5. 后记"></a>5. 后记</h4><p>本系列博文主要是记录学习OC的路上，一些比较不同的地方，或者是难以理解的地方。因此阅读的时候需要一些基础。另外这只是本人的理解，如有不对的抵挡还望指正，以免误人子弟。<br>OC为什么要用指针来描述对象，而不是像C++一样创建的时候就自动调用构造函数然后创建好？请见后续内存管理章节。至于为什么说OC更为纯粹的面向对象，正式因为上述的原因吧。具体原因，请见下一站<br>博文示例代码<a target="_blank" rel="noopener" href="https://github.com/Be-doing/Objectove-C-practice-code/tree/master/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1">【戳我进入】</a><br>最后用一个简单的猜拳游戏进行总结吧。<br><a target="_blank" rel="noopener" href="https://github.com/Be-doing/Objectove-C-practice-code/tree/master/%E7%AE%80%E5%8D%95%E7%8C%9C%E6%8B%B3%E6%B8%B8%E6%88%8F">【戳我进入猜拳游戏源代码】</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://www.baidu.com">Coolnaut</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.baidu.com/2021/01/19/%E4%B8%80%E7%AF%87%E5%85%A5%E9%97%A8Objective-C/">http://www.baidu.com/2021/01/19/%E4%B8%80%E7%AF%87%E5%85%A5%E9%97%A8Objective-C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.baidu.com" target="_blank">Coolnaut space</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OC/">OC</a><a class="post-meta__tags" href="/tags/iOS%EF%BC%8C%E9%80%9F%E9%80%9A%E4%B9%8B%E9%81%93/">iOS，速通之道</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2024/07/29/1Skcxe5wrfs6WZi.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/29/autoreleasepool/"><img class="prev-cover" src="https://i.niupic.com/images/2023/05/12/b6E8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">autoreleasepool</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/19/%E4%B8%80%E7%AF%87%E5%85%A5%E9%97%A8Swift/"><img class="next-cover" src="https://s2.loli.net/2024/07/30/PYuKnGTm4LF2Ns5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一篇入门Swift</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Livere</span><span class="switch-btn"></span><span class="second-comment">Giscus</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81ODE1MC8zNDYxMw=="></div></div><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Hello-world"><span class="toc-text">2. Hello-world</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#import"><span class="toc-text">#import</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Foundation"><span class="toc-text">Foundation</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NSLog"><span class="toc-text">NSLog</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%B1%BB"><span class="toc-text">3. 类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AF%B9%E8%B1%A1"><span class="toc-text">4. 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%B6%88%E6%81%AF"><span class="toc-text">4.1 消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%AF%B9%E8%B1%A1"><span class="toc-text">4.2 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">4.3 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%90%8E%E8%AE%B0"><span class="toc-text">5. 后记</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By Coolnaut</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to coolanut space !</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script><script>function loadGiscus () {
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  const config = Object.assign({
+    src: 'https://giscus.app/client.js',
+    'data-repo': 'coolnaut/hexo_blog_comment',
+    'data-repo-id': 'R_kgDOIt-nOA',
+    'data-category-id': 'DIC_kwDOIt-nOM4CTZY1',
+    'data-mapping': 'pathname',
+    'data-theme': nowTheme,
+    'data-reactions-enabled': '1',
+    crossorigin: 'anonymous',
+    async: true
+  },null)
+
+  let ele = document.createElement('script')
+  for (let key in config) {
+    ele.setAttribute(key, config[key])
+  }
+  document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function changeGiscusTheme () {
+  const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: theme
+    }
+  });
+}
+
+if ('Livere' === 'Giscus' || !false) {
+  if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+  else loadGiscus()
+} else {
+  function loadOtherComment () {
+    loadGiscus()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
